@@ -1,0 +1,92 @@
+{% extends 'flatpages/default.html' %}
+
+{% load custom_filters %}
+{% load custom_tags %}
+
+{% block title %}
+Search
+{% endblock title %}
+
+{% block content %}
+   <h1>Список новостей</h1>
+
+
+   <form action="" method="get">
+       {{ filterset.form.as_p }}
+       <input type="submit" value="Найти" />
+   </form>
+
+
+<!--h4>Всего новостей {{ post.header|length }} </h4-->
+  <style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+
+   {% if search %}
+
+    <table>
+
+           <tr>
+               <td>Заголовок</td>
+               <td>Дата публикации</td>
+               <td>Содержание</td>
+           </tr>
+</h4>
+
+           {% for post in filterset.qs %}
+            <!--summ = {{ post.header|length}}-->
+            <tr>
+            <td><a href="{% url 'post_detail' post.pk %}">{{ post.header|censors }}</a></td></p>
+            <!--h4><a>Дата публикации - {{ post.datetime_post|date:'d M Y' }}</a></h4></p-->
+            <td>{{ post.datetime_post|date:'d M Y' }}</td>
+            <td>{{ post.content|censors|truncatewords:20 }}</td>
+            </tr>
+           <!--tr>
+               <td>{{ post.header|censors }}</td>
+               <td>{{ post.datetime_post|date:'d M Y' }}</td>
+               <td>{{ post.content|truncatewords:20 }}</td>
+           </tr-->
+
+           {% endfor %}
+
+    </table>
+   {% else %}
+       <h2>Новостей нет!</h2>
+   {% endif %}
+
+   <h4> Информация о страницах -
+   {% if page_obj.has_previous %}
+       <a href="?{% url_replace page=1 %}">1</a>
+       {% if page_obj.previous_page_number != 1 %}
+           ...
+           <a href="?{% url_replace page=page_obj.previous_page_number %}">{{ page_obj.previous_page_number }}</h4></a>
+       {% endif %}
+   {% endif %}
+
+   {# Информация о текущей странице #}
+   {{ page_obj.number }}
+
+   {# Информация о следующих страницах #}
+   {% if page_obj.has_next %}
+       <a href="?{% url_replace page=page_obj.next_page_number %}">{{ page_obj.next_page_number }}</a>
+       {% if paginator.num_pages != page_obj.next_page_number %}
+           ...
+           <a href="?{% url_replace page=page_obj.paginator.num_pages %}">{{ page_obj.paginator.num_pages }}</a>
+       {% endif %}
+   {% endif %}
+
+{% endblock content %}

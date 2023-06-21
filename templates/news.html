@@ -1,0 +1,96 @@
+{% extends 'flatpages/default.html' %}
+{% load i18n %}
+{% load custom_filters %}
+{% load custom_tags %}
+
+{% block title %}
+News
+{% endblock title %}
+
+{% block content %}
+   <h1>{% trans 'Список новостей' %}</h1>
+
+   <h4>{% trans 'Всего новостей' %} {{news|length}} </h4>
+
+   <hr>
+<style>
+.myDiv {
+  border: 1px outset red;
+  background-color: tan;
+  text-align: center;
+}
+</style>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+   {% if news %}
+       <table>
+            <!--tr>
+    <th>Заголовок</th>
+    <th>Дата публикации</th>
+    <th>Содержание</th>
+  </tr-->
+    <!--td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+    <td>Germany</td>
+  </tr-->
+           <tr>
+               <td>{% trans 'Заголовок' %}</td>
+               <td>{% trans 'Дата публикации' %}</td>
+               <td>{% trans 'Содержание' %}</td
+           </tr>
+
+           {% for new in news %}
+           <!--div class="myDiv"-->
+           <tr>        <!--h4 align="left"-->
+               <td><a href="{% url 'post_detail' new.pk %}">{{ new.header|censors }}</a></td>
+               <td>{{ new.datetime_post|date:'d M Y' }}</td>
+               <td>{{ new.content|censors|truncatewords:20 }}</td>
+            </tr>
+           <!/div-->
+           {% endfor %}
+    <form action="/post/">
+        <input type="submit" value="{% trans 'Подписаться на новинки в категории' %}">
+    </form>
+       </table>
+   {% else %}
+       <h2>Новостей нет!- news</h2>
+   {% endif %}
+
+    <h4> Информация о страницах -
+   {% if page_obj.has_previous %}
+       <a href="?{% url_replace page=1 %}">1</a>
+       {% if page_obj.previous_page_number != 1 %}
+           ...
+           <a href="?{% url_replace page=page_obj.previous_page_number %}">{{ page_obj.previous_page_number }}</h4></a>
+       {% endif %}
+   {% endif %}
+
+   {# Информация о текущей странице #}
+   {{ page_obj.number }}
+
+   {# Информация о следующих страницах #}
+   {% if page_obj.has_next %}
+       <a href="?{% url_replace page=page_obj.next_page_number %}">{{ page_obj.next_page_number }}</a>
+       {% if paginator.num_pages != page_obj.next_page_number %}
+           ...
+           <a href="?{% url_replace page=page_obj.paginator.num_pages %}">{{ page_obj.paginator.num_pages }}</a>
+       {% endif %}
+   {% endif %}
+
+
+{% endblock content %}
