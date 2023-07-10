@@ -10687,3 +10687,89 @@ Traceback (most recent call last):
     raise self.error(
 django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 22: 'trans', expected 'endblock'. Did you forget to register or load this tag?
 2023-06-19 15:39:51,139 ERROR "GET /88/ HTTP/1.1" 500 189920 D:\PycharmProjects\Project_dir\venv\Lib\site-packages\django\core\servers\basehttp.py None
+2023-07-07 18:05:41,862 ERROR Internal Server Error: /accounts/password/reset/ /Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/log.py (<class 'smtplib.SMTPSenderRefused'>, SMTPSenderRefused(503, b'5.5.4 Error: send AUTH command first. 1688753141-f5a1fR1DaGk0-qdYIeYQS', 'None'), <traceback object at 0x109bf8700>)
+Traceback (most recent call last):
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/allauth/decorators.py", line 20, in wrap
+    resp = function(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/views/generic/base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/allauth/account/views.py", line 105, in post
+    response = self.form_valid(form)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/allauth/account/views.py", line 698, in form_valid
+    form.save(self.request)
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/allauth/account/forms.py", line 541, in save
+    self._send_password_reset_mail(request, email, self.users, **kwargs)
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/allauth/account/forms.py", line 581, in _send_password_reset_mail
+    get_adapter(request).send_mail(
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/allauth/account/adapter.py", line 140, in send_mail
+    msg.send()
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/core/mail/message.py", line 298, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/core/mail/backends/smtp.py", line 131, in send_messages
+    sent = self._send(message)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/core/mail/backends/smtp.py", line 149, in _send
+    self.connection.sendmail(
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/smtplib.py", line 887, in sendmail
+    raise SMTPSenderRefused(code, resp, from_addr)
+smtplib.SMTPSenderRefused: (503, b'5.5.4 Error: send AUTH command first. 1688753141-f5a1fR1DaGk0-qdYIeYQS', 'None')
+2023-07-07 18:05:41,901 ERROR "POST /accounts/password/reset/ HTTP/1.1" 500 133898 /Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/core/servers/basehttp.py None
+2023-07-10 14:38:51,553 ERROR Internal Server Error: /accounts/password/reset/ /Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/log.py (<class 'smtplib.SMTPSenderRefused'>, SMTPSenderRefused(503, b'5.5.4 Error: send AUTH command first. 1688999931-pcZfIeTDVKo0-zXssdO9I', 'None'), <traceback object at 0x10f084400>)
+Traceback (most recent call last):
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/allauth/decorators.py", line 20, in wrap
+    resp = function(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/views/generic/base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/allauth/account/views.py", line 105, in post
+    response = self.form_valid(form)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/allauth/account/views.py", line 698, in form_valid
+    form.save(self.request)
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/allauth/account/forms.py", line 539, in save
+    self._send_unknown_account_mail(request, email)
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/allauth/account/forms.py", line 552, in _send_unknown_account_mail
+    get_adapter(request).send_mail("account/email/unknown_account", email, context)
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/allauth/account/adapter.py", line 140, in send_mail
+    msg.send()
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/core/mail/message.py", line 298, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/core/mail/backends/smtp.py", line 131, in send_messages
+    sent = self._send(message)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/core/mail/backends/smtp.py", line 149, in _send
+    self.connection.sendmail(
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/smtplib.py", line 887, in sendmail
+    raise SMTPSenderRefused(code, resp, from_addr)
+smtplib.SMTPSenderRefused: (503, b'5.5.4 Error: send AUTH command first. 1688999931-pcZfIeTDVKo0-zXssdO9I', 'None')
+2023-07-10 14:38:51,586 ERROR "POST /accounts/password/reset/ HTTP/1.1" 500 132748 /Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/core/servers/basehttp.py None
