@@ -182,6 +182,8 @@ AUTHENTICATION_BACKENDS = [
 
 #Чтобы allauth распознал нашу форму как ту, что должна выполняться вместо формы по умолчанию
 ACCOUNT_FORMS = {'signup': 'sign.models.BasicSignupForm'}
+# Настройки почты
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_EMAIL')  # здесь указываем уже свою ПОЛНУЮ почту, с которой будут отправляться письма
 
