@@ -10773,3 +10773,290 @@ Traceback (most recent call last):
     raise SMTPSenderRefused(code, resp, from_addr)
 smtplib.SMTPSenderRefused: (503, b'5.5.4 Error: send AUTH command first. 1688999931-pcZfIeTDVKo0-zXssdO9I', 'None')
 2023-07-10 14:38:51,586 ERROR "POST /accounts/password/reset/ HTTP/1.1" 500 132748 /Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/core/servers/basehttp.py None
+2023-07-11 12:16:02,998 ERROR Internal Server Error: /i18n/setlang/ /Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/log.py (<class 'OSError'>, OSError(0, 'Bad magic number'), <traceback object at 0x104e09a40>)
+Traceback (most recent call last):
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/views/i18n.py", line 51, in set_language
+    next_trans = translate_url(next_url, lang_code)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/urls/base.py", line 178, in translate_url
+    with override(lang_code):
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/translation/__init__.py", line 196, in __enter__
+    activate(self.language)
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/translation/__init__.py", line 181, in activate
+    return _trans.activate(language)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/translation/trans_real.py", line 298, in activate
+    _active.value = translation(language)
+                    ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/translation/trans_real.py", line 287, in translation
+    _translations[language] = DjangoTranslation(language)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/translation/trans_real.py", line 166, in __init__
+    self._add_local_translations()
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/translation/trans_real.py", line 226, in _add_local_translations
+    translation = self._new_gnu_trans(localedir)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/translation/trans_real.py", line 193, in _new_gnu_trans
+    return gettext_module.translation(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/gettext.py", line 526, in translation
+    t = _translations.setdefault(key, class_(fp))
+                                      ^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/gettext.py", line 264, in __init__
+    self._parse(fp)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/gettext.py", line 353, in _parse
+    raise OSError(0, 'Bad magic number', filename)
+OSError: [Errno 0] Bad magic number: '/Users/Maxim/PycharmProjects/Projects_dir/NewsPortal-D13/locale/en/LC_MESSAGES/django.mo'
+2023-07-11 12:16:03,018 ERROR "POST /i18n/setlang/ HTTP/1.1" 500 125043 /Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/core/servers/basehttp.py None
+2023-07-11 12:21:01,040 ERROR Internal Server Error: /i18n/setlang/ /Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/log.py (<class 'OSError'>, OSError(0, 'Bad magic number'), <traceback object at 0x105045180>)
+Traceback (most recent call last):
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/views/i18n.py", line 51, in set_language
+    next_trans = translate_url(next_url, lang_code)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/urls/base.py", line 178, in translate_url
+    with override(lang_code):
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/translation/__init__.py", line 196, in __enter__
+    activate(self.language)
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/translation/__init__.py", line 181, in activate
+    return _trans.activate(language)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/translation/trans_real.py", line 298, in activate
+    _active.value = translation(language)
+                    ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/translation/trans_real.py", line 287, in translation
+    _translations[language] = DjangoTranslation(language)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/translation/trans_real.py", line 166, in __init__
+    self._add_local_translations()
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/translation/trans_real.py", line 226, in _add_local_translations
+    translation = self._new_gnu_trans(localedir)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/translation/trans_real.py", line 193, in _new_gnu_trans
+    return gettext_module.translation(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/gettext.py", line 526, in translation
+    t = _translations.setdefault(key, class_(fp))
+                                      ^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/gettext.py", line 264, in __init__
+    self._parse(fp)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/gettext.py", line 353, in _parse
+    raise OSError(0, 'Bad magic number', filename)
+OSError: [Errno 0] Bad magic number: '/Users/Maxim/PycharmProjects/Projects_dir/NewsPortal-D13/locale/en/LC_MESSAGES/django.mo'
+2023-07-11 12:21:01,057 ERROR "POST /i18n/setlang/ HTTP/1.1" 500 125043 /Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/core/servers/basehttp.py None
+2023-07-11 12:21:23,080 ERROR Internal Server Error: /i18n/setlang/ /Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/log.py (<class 'OSError'>, OSError(0, 'Bad magic number'), <traceback object at 0x1051b7700>)
+Traceback (most recent call last):
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/views/i18n.py", line 51, in set_language
+    next_trans = translate_url(next_url, lang_code)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/urls/base.py", line 178, in translate_url
+    with override(lang_code):
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/translation/__init__.py", line 196, in __enter__
+    activate(self.language)
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/translation/__init__.py", line 181, in activate
+    return _trans.activate(language)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/translation/trans_real.py", line 298, in activate
+    _active.value = translation(language)
+                    ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/translation/trans_real.py", line 287, in translation
+    _translations[language] = DjangoTranslation(language)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/translation/trans_real.py", line 166, in __init__
+    self._add_local_translations()
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/translation/trans_real.py", line 226, in _add_local_translations
+    translation = self._new_gnu_trans(localedir)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/translation/trans_real.py", line 193, in _new_gnu_trans
+    return gettext_module.translation(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/gettext.py", line 526, in translation
+    t = _translations.setdefault(key, class_(fp))
+                                      ^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/gettext.py", line 264, in __init__
+    self._parse(fp)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/gettext.py", line 353, in _parse
+    raise OSError(0, 'Bad magic number', filename)
+OSError: [Errno 0] Bad magic number: '/Users/Maxim/PycharmProjects/Projects_dir/NewsPortal-D13/locale/en/LC_MESSAGES/django.mo'
+2023-07-11 12:21:23,097 ERROR "POST /i18n/setlang/ HTTP/1.1" 500 125043 /Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/core/servers/basehttp.py None
+2023-07-11 12:21:30,038 ERROR Internal Server Error: /i18n/setlang/ /Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/log.py (<class 'OSError'>, OSError(0, 'Bad magic number'), <traceback object at 0x105231680>)
+Traceback (most recent call last):
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/views/i18n.py", line 51, in set_language
+    next_trans = translate_url(next_url, lang_code)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/urls/base.py", line 178, in translate_url
+    with override(lang_code):
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/translation/__init__.py", line 196, in __enter__
+    activate(self.language)
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/translation/__init__.py", line 181, in activate
+    return _trans.activate(language)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/translation/trans_real.py", line 298, in activate
+    _active.value = translation(language)
+                    ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/translation/trans_real.py", line 287, in translation
+    _translations[language] = DjangoTranslation(language)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/translation/trans_real.py", line 166, in __init__
+    self._add_local_translations()
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/translation/trans_real.py", line 226, in _add_local_translations
+    translation = self._new_gnu_trans(localedir)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/translation/trans_real.py", line 193, in _new_gnu_trans
+    return gettext_module.translation(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/gettext.py", line 526, in translation
+    t = _translations.setdefault(key, class_(fp))
+                                      ^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/gettext.py", line 264, in __init__
+    self._parse(fp)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/gettext.py", line 353, in _parse
+    raise OSError(0, 'Bad magic number', filename)
+OSError: [Errno 0] Bad magic number: '/Users/Maxim/PycharmProjects/Projects_dir/NewsPortal-D13/locale/en/LC_MESSAGES/django.mo'
+2023-07-11 12:21:30,052 ERROR "POST /i18n/setlang/ HTTP/1.1" 500 125043 /Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/core/servers/basehttp.py None
+2023-07-11 12:23:05,722 ERROR Internal Server Error: /i18n/setlang/ /Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/log.py (<class 'OSError'>, OSError(0, 'Bad magic number'), <traceback object at 0x1052a9100>)
+Traceback (most recent call last):
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/views/i18n.py", line 51, in set_language
+    next_trans = translate_url(next_url, lang_code)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/urls/base.py", line 178, in translate_url
+    with override(lang_code):
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/translation/__init__.py", line 196, in __enter__
+    activate(self.language)
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/translation/__init__.py", line 181, in activate
+    return _trans.activate(language)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/translation/trans_real.py", line 298, in activate
+    _active.value = translation(language)
+                    ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/translation/trans_real.py", line 287, in translation
+    _translations[language] = DjangoTranslation(language)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/translation/trans_real.py", line 166, in __init__
+    self._add_local_translations()
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/translation/trans_real.py", line 226, in _add_local_translations
+    translation = self._new_gnu_trans(localedir)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/translation/trans_real.py", line 193, in _new_gnu_trans
+    return gettext_module.translation(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/gettext.py", line 526, in translation
+    t = _translations.setdefault(key, class_(fp))
+                                      ^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/gettext.py", line 264, in __init__
+    self._parse(fp)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/gettext.py", line 353, in _parse
+    raise OSError(0, 'Bad magic number', filename)
+OSError: [Errno 0] Bad magic number: '/Users/Maxim/PycharmProjects/Projects_dir/NewsPortal-D13/locale/en/LC_MESSAGES/django.mo'
+2023-07-11 12:23:05,736 ERROR "POST /i18n/setlang/ HTTP/1.1" 500 125043 /Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/core/servers/basehttp.py None
+2023-07-11 12:23:51,278 ERROR Internal Server Error: /i18n/setlang/ /Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/log.py (<class 'OSError'>, OSError(0, 'Bad magic number'), <traceback object at 0x105358180>)
+Traceback (most recent call last):
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/views/i18n.py", line 51, in set_language
+    next_trans = translate_url(next_url, lang_code)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/urls/base.py", line 178, in translate_url
+    with override(lang_code):
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/translation/__init__.py", line 196, in __enter__
+    activate(self.language)
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/translation/__init__.py", line 181, in activate
+    return _trans.activate(language)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/translation/trans_real.py", line 298, in activate
+    _active.value = translation(language)
+                    ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/translation/trans_real.py", line 287, in translation
+    _translations[language] = DjangoTranslation(language)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/translation/trans_real.py", line 166, in __init__
+    self._add_local_translations()
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/translation/trans_real.py", line 226, in _add_local_translations
+    translation = self._new_gnu_trans(localedir)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/translation/trans_real.py", line 193, in _new_gnu_trans
+    return gettext_module.translation(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/gettext.py", line 526, in translation
+    t = _translations.setdefault(key, class_(fp))
+                                      ^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/gettext.py", line 264, in __init__
+    self._parse(fp)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/gettext.py", line 353, in _parse
+    raise OSError(0, 'Bad magic number', filename)
+OSError: [Errno 0] Bad magic number: '/Users/Maxim/PycharmProjects/Projects_dir/NewsPortal-D13/locale/en/LC_MESSAGES/django.mo'
+2023-07-11 12:23:51,295 ERROR "POST /i18n/setlang/ HTTP/1.1" 500 125073 /Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/core/servers/basehttp.py None
+2023-07-11 12:30:26,930 ERROR Internal Server Error: /i18n/setlang/ /Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/log.py (<class 'OSError'>, OSError(0, 'Bad magic number'), <traceback object at 0x10540f180>)
+Traceback (most recent call last):
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/views/i18n.py", line 51, in set_language
+    next_trans = translate_url(next_url, lang_code)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/urls/base.py", line 178, in translate_url
+    with override(lang_code):
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/translation/__init__.py", line 196, in __enter__
+    activate(self.language)
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/translation/__init__.py", line 181, in activate
+    return _trans.activate(language)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/translation/trans_real.py", line 298, in activate
+    _active.value = translation(language)
+                    ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/translation/trans_real.py", line 287, in translation
+    _translations[language] = DjangoTranslation(language)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/translation/trans_real.py", line 166, in __init__
+    self._add_local_translations()
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/translation/trans_real.py", line 226, in _add_local_translations
+    translation = self._new_gnu_trans(localedir)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/utils/translation/trans_real.py", line 193, in _new_gnu_trans
+    return gettext_module.translation(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/gettext.py", line 526, in translation
+    t = _translations.setdefault(key, class_(fp))
+                                      ^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/gettext.py", line 264, in __init__
+    self._parse(fp)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/gettext.py", line 353, in _parse
+    raise OSError(0, 'Bad magic number', filename)
+OSError: [Errno 0] Bad magic number: '/Users/Maxim/PycharmProjects/Projects_dir/NewsPortal-D13/locale/en/LC_MESSAGES/django.mo'
+2023-07-11 12:30:26,945 ERROR "POST /i18n/setlang/ HTTP/1.1" 500 125200 /Users/Maxim/PycharmProjects/Projects_dir/venv/lib/python3.11/site-packages/django/core/servers/basehttp.py None
