@@ -46,6 +46,10 @@ msgstr ""
 msgid "Подписаться"
 msgstr ""
 
+#: templates/flatpages/default.html:74
+msgid "Пользователь"
+msgstr ""
+
 #: templates/news.html:11
 msgid "Список новостей"
 msgstr ""
