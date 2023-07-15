@@ -1,7 +1,7 @@
-# Импортируем класс, который говорит нам о том,
-# что в этом представлении мы будем выводить список объектов из БД
+#  Импортируем класс, который говорит нам о том,
+#  что в этом представлении мы будем выводить список объектов из БД
 from django.urls import reverse_lazy
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, ListView, TemplateView
+from django.views.generic import DetailView, CreateView, UpdateView, DeleteView, ListView, TemplateView
 from .models import Post, Author, User, SubscribersCategory, New
 from .filters import PostFilter, PostCategoryFilter
 from django.contrib.auth.mixins import PermissionRequiredMixin
@@ -11,9 +11,9 @@ from .forms import PostForm, SubscribeForm
 
 
 class PostList(ListView):
-    # Указываем модель, объекты которой мы будем выводить
+    #  Указываем модель, объекты которой мы будем выводить
     model = New
-    # Поле, которое будет использоваться для сортировки объектов
+    #  Поле, которое будет использоваться для сортировки объектов
     ordering = '-datetime_post'
     queryset = Post.objects.filter()
     # Указываем имя шаблона, в котором будут все инструкции о том,
@@ -46,7 +46,7 @@ class PostCreate(PermissionRequiredMixin, CreateView):
     form_class = PostForm
     model = Post
     template_name = 'create.html'
-    permission_required = 'news.add_post' #добавление права создание объекта
+    permission_required = 'news.add_post'  #добавление права создание объекта
 
     def form_valid(self, form):
         post = form.save(commit=False)

@@ -29,7 +29,7 @@ class New(models.Model):
         return '{}'.format(self.title)
 
 
-class Author(models.Model):  # наследуемся от класса Model
+class Author(models.Model):   #  наследуемся от класса Model
     user_name = models.OneToOneField(User, on_delete=models.CASCADE)
     user_rating = models.IntegerField(default=0)
 
@@ -64,13 +64,13 @@ class Category(models.Model):
 class Post(models.Model):
     article = 'AR'
     news = 'NE'
-    author_name = models.ForeignKey(Author, on_delete=models.CASCADE, verbose_name='Имя автора')  # связь «один ко многим» с моделью Author
-    types_post = models.CharField(max_length=2, choices=Types, default='NE', verbose_name='Тип поста')  # поле с выбором — «статья» или «новость»;
-    datetime_post = models.DateTimeField(auto_now_add=True, verbose_name='Дата и время поста')  # автоматически добавляемая дата и время создания;
-    category_post = models.ManyToManyField(Category, through='PostCategory')  # связь «многие ко многим» с моделью Category (с дополнительной моделью PostCategory);
-    header = models.CharField(max_length=255, verbose_name='Заголовок') #  заголовок статьи/новости
-    content = models.TextField() #  текст статьи/новости
-    rating_post = models.IntegerField(default=0) #  рейтинг статьи/новости
+    author_name = models.ForeignKey(Author, on_delete=models.CASCADE, verbose_name='Имя автора')   # связь «один ко многим» с моделью Author
+    types_post = models.CharField(max_length=2, choices=Types, default='NE', verbose_name='Тип поста')   # поле с выбором — «статья» или «новость»;
+    datetime_post = models.DateTimeField(auto_now_add=True, verbose_name='Дата и время поста')   # автоматически добавляемая дата и время создания;
+    category_post = models.ManyToManyField(Category, through='PostCategory')   # связь «многие ко многим» с моделью Category (с дополнительной моделью PostCategory);
+    header = models.CharField(max_length=255, verbose_name='Заголовок')  #  заголовок статьи/новости
+    content = models.TextField()  #  текст статьи/новости
+    rating_post = models.IntegerField(default=0)  #  рейтинг статьи/новости
 
 
     def preview(self):
@@ -107,11 +107,11 @@ class PostCategory(models.Model):
 
 
 class Comment(models.Model):
-    post_comment = models.ForeignKey(Post, on_delete=models.CASCADE)  # связь «один ко многим» с моделью Post;
-    user_comment = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Автор комментария')  #  связь «один ко многим» со встроенной моделью User ;
-    text_comment = models.TextField(max_length=255, verbose_name='Текст комментария')  # текст комментария;
-    datetime_comment = models.DateTimeField(auto_now_add=True, verbose_name='Дата и время комментария')  # дата и время создания комментария;
-    rating_comment = models.IntegerField(default=0, verbose_name='Рейтинг комментария')  # рейтинг комментария
+    post_comment = models.ForeignKey(Post, on_delete=models.CASCADE)   # связь «один ко многим» с моделью Post;
+    user_comment = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Автор комментария')   #  связь «один ко многим» со встроенной моделью User ;
+    text_comment = models.TextField(max_length=255, verbose_name='Текст комментария')   # текст комментария;
+    datetime_comment = models.DateTimeField(auto_now_add=True, verbose_name='Дата и время комментария')   # дата и время создания комментария;
+    rating_comment = models.IntegerField(default=0, verbose_name='Рейтинг комментария')   # рейтинг комментария
 
     class Meta:
         verbose_name_plural = 'Комментарии'
