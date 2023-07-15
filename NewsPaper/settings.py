@@ -39,7 +39,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'modeltranslation',
+    'modeltranslation', # обязательно впишите его перед админом
     'django.contrib.admin', #админка
     'django.contrib.auth', # система аутентификации.
     'django.contrib.contenttypes', # фреймворк для content types.
@@ -77,18 +77,6 @@ MIDDLEWARE = [
     'django.middleware.locale.LocaleMiddleware',
     'news.middlewares.TimezoneMiddleware', # add that middleware
 ]
-"""
-MIDDLEWARE = [
-'django.middleware.security.SecurityMiddleware',
-'django.contrib.sessions.middleware.SessionMiddleware',
-'django.middleware.locale.LocaleMiddleware',
-'django.middleware.common.CommonMiddleware',
-'django.middleware.csrf.CsrfViewMiddleware',
-'django.contrib.auth.middleware.AuthenticationMiddleware',
-'django.contrib.messages.middleware.MessageMiddleware',
-'django.middleware.clickjacking.XFrameOptionsMiddleware'
-]
-"""
 
 ROOT_URLCONF = 'NewsPaper.urls'
 
@@ -155,6 +143,8 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+
+# gettext = lambda s: s
 
 LANGUAGES = [
     ('en-us', 'English'),

@@ -22,14 +22,10 @@ from django.contrib.auth.views import LoginView, LogoutView
 urlpatterns = [
    path('admin/', admin.site.urls),
    path('pages/', include('django.contrib.flatpages.urls')),
-   path('', include('news.urls')), #http://127.0.0.1:8000
-   #path('news/', include('news.urls')),
-   #path('article/', include('news.urls')),
-   # path('search/', PostSearch.as_view(), name='search'),
-   #path('', include('protect.urls')),
+   path('', include('news.urls')),  #http://127.0.0.1:8000
    path('sign/', include('sign.urls')),
-   path('accounts/', include('allauth.urls')), #http://127.0.0.1:8000/accounts/login/
-   #path('subscribe/', include('news.urls')), #http://127.0.0.1:8000/subscribe/
+   path('accounts/', include('allauth.urls')),  #http://127.0.0.1:8000/accounts/login/
    path('__debug__/', include('debug_toolbar.urls')),
-   path('i18n/', include('django.conf.urls.i18n')), # подключаем встроенные эндопинты для работы с локализацией
+   path('i18n/', include('django.conf.urls.i18n')),  # подключаем встроенные эндопинты для работы с локализацией
 ]
+
