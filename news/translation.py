@@ -16,10 +16,11 @@ class NewTranslationOptions(TranslationOptions):
 class AuthorTranslationOptions(TranslationOptions):
     fields = ('user_name', 'user_rating',)
 
-# @register(Category)
-# class CategoryTranslationOptions(TranslationOptions):
-#     fields = ('name_category', 'subscribers',)
-#
+@register(Category)
+class CategoryTranslationOptions(TranslationOptions):
+    fields = ('name_category',)
+
+
 @register(Comment)
 class CommentTranslationOptions(TranslationOptions):
     fields = ('post_comment', 'user_comment', 'text_comment', 'datetime_comment',)
